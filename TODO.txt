@@ -1,0 +1,9 @@
+# GUI
+    - Login Sigup GUI
+    - Switch to light/dark mode
+    - Leaderboard
+
+# Backend
+    - Login Sigup API
+    - Leaderboard API
+    
