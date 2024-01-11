@@ -22,7 +22,7 @@ class TypePage(CTk.CTkFrame):
         self.input_entry.pack(padx=20, pady=20)
         self.input_entry.bind("<KeyRelease>", self.start)
 
-        self.speed_label = CTk.CTkLabel(self, text="Speed: \n0.00 CPS\n0.00 CPM\n 0.00 WPS\n 0.00 WPM", font=("Roboto", 24))
+        self.speed_label = CTk.CTkLabel(self, text="Speed: \n0.00 CPS | 0.00 CPM\n 0.00 WPS | 0.00 WPM", font=("Roboto", 24))
         self.speed_label.pack(padx=20, pady=20)
 
         self.reset_button = CTk.CTkButton(self, text="Reset", command=self.reset, font=("Roboto", 24))
@@ -54,12 +54,12 @@ class TypePage(CTk.CTkFrame):
             cpm = cps * 60
             wps = len(self.input_entry.get().split(" ")) / self.coutner
             wpm = wps * 60
-            self.speed_label.configure(text=f"Speed: \n{cps:.2f} CPS\n{cpm:.2f} CPM\n {wps:.2f} WPS\n {wpm:.2f} WPM")
+            self.speed_label.configure(text=f"Speed: \n{cps:.2f} CPS | {cpm:.2f} CPM\n {wps:.2f} WPS | {wpm:.2f} WPM")
 
 
     def reset(self):
         self.running = False
         self.coutner = 0
-        self.speed_label.configure(text="Speed: \n0.00 CPS\n0.00 CPM\n 0.00 WPS\n 0.00 WPM")
+        self.speed_label.configure(text="Speed: \n0.00 CPS | 0.00 CPM\n 0.00 WPS | 0.00 WPM")
         self.sample_label.configure(text=random.choice(texts))
         self.input_entry.delete(0, CTk.END)
